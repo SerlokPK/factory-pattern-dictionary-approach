@@ -43,12 +43,7 @@ namespace Domain.Factories
         /// </summary>
         public IEnumerable<string> AvailableTypes => cars.Keys.ToList();
 
-        /// <summary>
-        /// Add new car type
-        /// </summary>
-        /// <param name="carType">Key to retrieve specific car</param>
-        /// <param name="factoryMethod">Car instance</param>
-        public void AddType(string carType, Func<Car> factoryMethod)
+        private void AddType(string carType, Func<Car> factoryMethod)
         {
             if (string.IsNullOrEmpty(carType) || factoryMethod is null)
             {
